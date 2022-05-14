@@ -1,27 +1,22 @@
-const express = require('express');
+// Sukurti atskirą "/books/:id"  maršrutą, kuris iš serverio grąžina pasirinktos knygos pavadinimą.
 
+
+const express = require('express');
 const app = express();
+
+
+const knygos = [
+    "tadas blinda",
+    "biblija",
+    "senis ir jura"
+]
 
 app.listen(9000, () => {
     console.log(`Serveris paleistas. Laukia užklausų`);
 });
 
-app.get('/barista/:gerimas/:kiekis', (request, response) => {
-    console.log(request.params);
+app.get('/books/:id', (request, response) => {
+    const knygosId = request.params.id
+    response.json(knygos[knygosId])
 
-    const gerimoPavadinimas = request.params.gerimas;
-    const puodeliuKiekis = request.params.kiekis;
-
-    console.log('pasiimam puodeli');
-    console.log(`ipilam ${gerimoPavadinimas} i puodeli`);
-
-    response.json(`${puodeliuKiekis} puodelis ${gerimoPavadinimas}`);
-    console.log('atiduodam puodeli');
-
-    if (puodeliuKiekis > 1) {
-        console.log('tvarkom darbo vieta');
-        return;
-    }
-
-    console.log('laukiam sekancio kliento');
-});
+})
