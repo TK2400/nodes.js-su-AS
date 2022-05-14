@@ -1,22 +1,11 @@
 {
-  "name": "nodes.js-su-as",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TK2400/nodes.js-su-AS.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/TK2400/nodes.js-su-AS/issues"
-  },
-  "homepage": "https://github.com/TK2400/nodes.js-su-AS#readme",
-  "dependencies": {
-    "express": "^4.18.1"
-  }
+    "name": "vigi-13-nodejs",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "express": "^4.18.1"
+    }
 }
