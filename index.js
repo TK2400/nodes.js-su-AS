@@ -1,7 +1,10 @@
-// Sukurti ats "/books/:from/:to" maršrutą, kuris iš serverio grąžina JSON masyvą pasirinktų knygų.
+require('dotenv').config();
+
 const express = require('express');
 
 const app = express();
+
+console.log(process.env.PORT);// taip pasiekiami aplinkos kintamieji
 
 const knygos = [
   'tadas blinda ',
@@ -12,7 +15,7 @@ const knygos = [
 
 // console.log(knygos.slice(0, 3));
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
   console.log('Serveris paleistas. Laukia užklausų');
 });
 
