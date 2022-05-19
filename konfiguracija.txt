@@ -1,0 +1,5 @@
+kodo kokybe ir kaip mes ji uzrasom
+gali buti papildiniai pvz alt + shift + f
+ecma script ESlint - padeda uztikrini kokybe automatiskai
+automatizuoti kodo kokybe galima su ESLint.org
+ 
