@@ -16,7 +16,7 @@ app.listen(3000, () => {
   console.log('Serveris paleistas. Laukia užklausų');
 });
 
-app.get('/books/:from/:to', (request, response) => {
+app.get('/book/:from/:to', (request, response) => {
   const fromIndex = Number(request.params.from);
   const fromTo = Number(request.params.to);
   const atgnybtasMasyvas = knygos.slice(fromIndex, fromTo + 1);
