@@ -10,9 +10,9 @@ const knygos = [
   'siuvejo kronikos ',
 ];
 
-console.log(knygos.slice(0, 3));
+// console.log(knygos.slice(0, 3));
 
-app.listen(9000, () => {
+app.listen(3000, () => {
   console.log('Serveris paleistas. Laukia užklausų');
 });
 
