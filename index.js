@@ -20,21 +20,11 @@ app.listen(process.env.PORT, () => {
 app.get('/books', (req, response) => {
   client.connect(async () => {
     const collection = client.db('knygu-projektas').collection('knygos');
-    // const result = await collection.insertOne({
-    //   name: 'Rytas perone',
-    //   pages: 150,
-    // });
-    // console.log(result);
     const anotherResult = await collection.find({}).toArray();
     response.json(anotherResult);
     client.close();
   });
 });
-
-// app.get('/books/prideti-knyga', (req, res) => {
-//   knygos.push('o,isidejo nauja knyga');
-//   res.json(knygos);
-// });
 
 app.post('/books', (req, res) => {
   client.connect(async () => {
