@@ -17,21 +17,23 @@ app.listen(process.env.PORT, () => {
   console.log('Serveris paleistas. Laukia užklausų');
 });
 
-app.get('/books', (req, response) => {
+app.get('/houses', (req, response) => {
   client.connect(async () => {
-    const collection = client.db('knygu-projektas').collection('knygos');
+    const collection = client.db('namu-katalogas').collection('namai');
     const anotherResult = await collection.find({}).toArray();
     response.json(anotherResult);
     client.close();
   });
 });
 
-app.post('/books', (req, res) => {
+app.post('/houses', (req, res) => {
   client.connect(async () => {
-    const collection = client.db('knygu-projektas').collection('knygos');
+    const collection = client.db('namu-katalogas').collection('namai');
     const result = await collection.insertOne({
-      name: req.body.name,
-      pages: req.body.pages,
+      pardavejoId: req.body.pardavejoId,
+      namoTipas: req.body.namoTipas,
+      aukstuSkaicius: req.body.aukstuSkaicius,
+      skelbimoIkelimoData: req.body.skelbimoIkelimoData,
     });
     res.json(result);
     client.close();
