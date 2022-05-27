@@ -26,6 +26,13 @@ app.get('/houses', (req, response) => {
   });
 });
 
+const newHouse = {
+  pardavejoId: 3,
+  namoTipas: 'murinis',
+  aukstuSkaicius: 2,
+  skelbimoIkelimoData: Date(),
+};
+
 app.post('/houses', (req, res) => {
   client.connect(async () => {
     const collection = client.db('namu-katalogas').collection('namai');
